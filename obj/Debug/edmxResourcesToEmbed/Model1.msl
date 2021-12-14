@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="formdbModelStoreContainer" CdmEntityContainer="formdbEntities">
+    <EntitySetMapping Name="newuserregs">
+      <EntityTypeMapping TypeName="formdbModel.newuserreg">
+        <MappingFragment StoreEntitySet="newuserreg">
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="Repwd" ColumnName="Repwd" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Maritalstatus" ColumnName="Maritalstatus" />
+          <ScalarProperty Name="Joindate" ColumnName="Joindate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Userreg" FunctionName="formdbModel.Store.Userreg" />
+    <FunctionImportMapping FunctionImportName="UserRegistration" FunctionName="formdbModel.Store.Userreg" />
+  </EntityContainerMapping>
+</Mapping>

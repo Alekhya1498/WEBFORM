@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="formdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="newuserreg">
+    <Key>
+      <PropertyRef Name="Userid" />
+    </Key>
+    <Property Name="Userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Pwd" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Repwd" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Maritalstatus" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Joindate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="formdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="newuserregs" EntityType="Self.newuserreg" />
+    <FunctionImport Name="Userreg">
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Pwd" Mode="In" Type="String" />
+      <Parameter Name="Repwd" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="Maritalstatus" Mode="In" Type="String" />
+      <Parameter Name="Joindate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="UserRegistration" EntitySet="newuserregs" ReturnType="Collection(formdbModel.newuserreg)">
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Pwd" Mode="In" Type="String" />
+      <Parameter Name="Repwd" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="Maritalstatus" Mode="In" Type="String" />
+      <Parameter Name="Joindate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

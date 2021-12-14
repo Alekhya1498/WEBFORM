@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="formdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="newuserreg">
+    <Key>
+      <PropertyRef Name="Userid" />
+    </Key>
+    <Property Name="Userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="150" />
+    <Property Name="Pwd" Type="nvarchar" MaxLength="150" />
+    <Property Name="Repwd" Type="nvarchar" MaxLength="150" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="Maritalstatus" Type="nvarchar" MaxLength="150" />
+    <Property Name="Joindate" Type="date" />
+  </EntityType>
+  <Function Name="Userreg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Username" Type="nvarchar" Mode="In" />
+    <Parameter Name="Pwd" Type="nvarchar" Mode="In" />
+    <Parameter Name="Repwd" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Gender" Type="char" Mode="In" />
+    <Parameter Name="Maritalstatus" Type="nvarchar" Mode="In" />
+    <Parameter Name="Joindate" Type="date" Mode="In" />
+  </Function>
+  <EntityContainer Name="formdbModelStoreContainer">
+    <EntitySet Name="newuserreg" EntityType="Self.newuserreg" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
